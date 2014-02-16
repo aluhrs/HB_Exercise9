@@ -72,11 +72,16 @@ def palindrome(some_string):
 def fold_paper(width, height, folds):
     if folds == 0:
         return (width, height)
-
-    # for each fold, need to divide the width by 2
-    # height stays the same
-    # need to count down the folds
-    return fold_paper(width / 2.0, height, folds - 1)
+    else:
+        # for each fold, need to divide the width by 2
+        # height stays the same
+        # need to count down the folds
+        # if the user inputs the width/height incorrectly
+        # correct it
+        if width > height or width == height:
+            return fold_paper(width/2.0, height, folds-1)
+        else:
+            return fold_paper(width, height/2.0, folds-1)
 
 # Count up
 # Print all the numbers from 0 to target
